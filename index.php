@@ -21,8 +21,7 @@ $google_client->setAccessType("offline");
 $google_client->setScopes(['https://www.googleapis.com/auth/devstorage.read_write']);
 
 $google_storage_service = new Google_Service_Storage($google_client);
-
-$metaData = $google_storage_service->objects->get($settings['bucket'], $settings['filename']);
+$file_metadata          = $google_storage_service->objects->get($settings['bucket'], $settings['filename']);
 
 //var_dump($metaData);
 // object(Google_Service_Storage_StorageObject)#61 (38) {
@@ -30,12 +29,12 @@ $metaData = $google_storage_service->objects->get($settings['bucket'], $settings
 // }
 
 
-$fileData = $google_storage_service->objects->get($settings['bucket'], $settings['filename'], ['alt' => 'media']);
+$file_contents = $google_storage_service->objects->get($settings['bucket'], $settings['filename'], ['alt' => 'media']);
 
-var_dump($fileData);
+var_dump($file_contents);
 // object(GuzzleHttp\Psr7\Response)#45 (6) {
 // ...
 // }
 
-assert($fileData instanceof Google_Service_Storage_StorageObject, 'Unexpected class returned. Expected Google_Service_Storage_StorageObject but got ' . get_class($fileData) . 'instead.');
+assert($file_contents instanceof Google_Service_Storage_StorageObject, 'Unexpected class returned. Expected Google_Service_Storage_StorageObject but got ' . get_class($file_contents) . 'instead.');
 // Warning: assert(): Unexpected class returned. Expected Google_Service_Storage_StorageObject but got GuzzleHttp\Psr7\Responseinstead.
