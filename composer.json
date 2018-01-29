@@ -1,0 +1,14 @@
+{
+    "name": "voziv/gcs",
+    "description": "Test repo for issue google/google-api-php-client#1140",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Lee Robert",
+            "email": "lrobert@leerobert.ca"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.2"
+    }
+}

@@ -1,0 +1,6 @@
+<?php
+return [
+    'authKeyFile' => '/path/to/your/key.p12',
+    'bucket' => 'your-bucket-name',
+    'filename' => 'your-file.pdf',
+];
